@@ -38,7 +38,7 @@ Como este site usa rotas SPA, em servidor Apache crie `.htaccess` na pasta públ
 
 Depois de escolher a hospedagem:
 
-- apontar `royalnorte.com.br` e `www` para o provedor;
+- apontar `royalnortedistribuidora.com.br` e `www.royalnortedistribuidora.com.br` para o provedor;
 - ativar SSL/HTTPS;
 - manter `app.royalnorte.com.br` apontando exclusivamente para o Portal Royal Norte.
 
