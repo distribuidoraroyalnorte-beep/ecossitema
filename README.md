@@ -56,7 +56,7 @@ Como usa `BrowserRouter`, o provedor deve redirecionar rotas desconhecidas para 
 ## Separação de aplicações
 
 - `royalnortedistribuidora.com.br` → site institucional
-- `app.royalnorte.com.br` → Portal Royal Norte
-- `api.royalnorte.com.br` → APIs do ecossistema
+- `app.royalnortedistribuidora.com.br` → Portal Royal Norte
+- `api.royalnortedistribuidora.com.br` → APIs do ecossistema
 
 O Portal é acessado por um link externo e possui ciclo de desenvolvimento e publicação independente.

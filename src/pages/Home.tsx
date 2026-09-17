@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import ActionLink from '../components/ActionLink'
+import BrandImage from '../components/BrandImage'
 import BrandLogoWall from '../components/BrandLogoWall'
 import CardGrid from '../components/Cards'
 import CTA from '../components/CTA'
@@ -7,6 +8,7 @@ import Hero from '../components/Hero'
 import InstitutionalSection from '../components/InstitutionalSection'
 import SectionTitle from '../components/SectionTitle'
 import coverageMap from '../assets/images/mapa-cobertura.png'
+import { brand } from '../data/brand'
 import { featuredPartnerBrands } from '../data/brands'
 import { homeContent } from '../data/content'
 
@@ -16,7 +18,11 @@ export default function Home() {
       <Hero
         content={homeContent.hero}
         variant="home"
-        visual={<figure className="hero-operation-media" aria-hidden="true" />}
+        visual={
+          <figure className="hero-operation-media">
+            <BrandImage asset={brand.assets.images.homeHero} loading="eager" fetchPriority="high" />
+          </figure>
+        }
       />
       <InstitutionalSection intro={homeContent.capabilities.intro}>
         <CardGrid items={homeContent.capabilities.cards} />

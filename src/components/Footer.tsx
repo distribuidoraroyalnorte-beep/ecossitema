@@ -1,4 +1,4 @@
-import { Instagram, Linkedin, MapPin } from 'lucide-react'
+import { Instagram, Linkedin, Mail, MapPin, MessageCircle } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import Logo from './Logo'
 import { footerContent, footerNavigation, site } from '../data/site'
@@ -46,6 +46,17 @@ export default function Footer() {
           <span className="inline">
             <MapPin size={16} /> {site.contact.address}
           </span>
+          <a
+            className="inline"
+            href={`https://wa.me/${site.contact.whatsapp}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <MessageCircle size={16} /> {site.contact.phone}
+          </a>
+          <a className="inline" href={`mailto:${site.contact.email}`}>
+            <Mail size={16} /> {site.contact.email}
+          </a>
           <span>{footerContent.locationText}</span>
         </div>
       </div>

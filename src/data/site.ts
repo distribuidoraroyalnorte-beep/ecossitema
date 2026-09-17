@@ -31,7 +31,7 @@ const maranhaoBrands = ['MSD Saúde Animal', 'Alere', 'Hebron Vet', 'PethyGroup'
 
 export const site = {
   since: 2005,
-  portalUrl: 'https://app.royalnorte.com.br',
+  portalUrl: 'https://app.royalnortedistribuidora.com.br',
   serviceArea: ['Pará', 'Amapá', 'Maranhão'],
   brandPortfolios: [
     {
@@ -59,9 +59,9 @@ export const site = {
     { city: 'Macapá', state: 'AP', label: 'Unidade' },
   ],
   contact: {
-    phone: '',
-    whatsapp: '',
-    email: '',
+    phone: '+55 91 98247-2700',
+    whatsapp: '5591982472700',
+    email: 'comercial@royalnorte.com.br',
     address: 'Ananindeua, Pará',
   },
   brands: paraBrands,

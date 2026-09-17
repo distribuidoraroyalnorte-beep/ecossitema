@@ -5,9 +5,16 @@ type Props = {
   className?: string
   loading?: 'eager' | 'lazy'
   alt?: string
+  fetchPriority?: 'high' | 'low' | 'auto'
 }
 
-export default function BrandImage({ asset, className, loading = 'lazy', alt }: Props) {
+export default function BrandImage({
+  asset,
+  className,
+  loading = 'lazy',
+  alt,
+  fetchPriority,
+}: Props) {
   if (!asset) return null
   return (
     <img
@@ -18,6 +25,7 @@ export default function BrandImage({ asset, className, loading = 'lazy', alt }: 
       height={asset.height}
       loading={loading}
       decoding="async"
+      fetchPriority={fetchPriority}
     />
   )
 }

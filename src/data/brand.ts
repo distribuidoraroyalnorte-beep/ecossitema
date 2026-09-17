@@ -1,4 +1,5 @@
 import royalLogo from '../assets/brand/ROYAL LOGO.png'
+import homeHeroPhoto from '../assets/brand/foto-royal-norte.webp'
 
 export type BrandAsset = {
   src: string
@@ -53,7 +54,12 @@ export const brand = {
       height: 3008,
     } satisfies BrandAsset,
     images: {
-      homeHero: null as BrandAsset | null,
+      homeHero: {
+        src: homeHeroPhoto,
+        alt: 'Fachada da Royal Norte Distribuidora',
+        width: 680,
+        height: 510,
+      } satisfies BrandAsset,
       companyHistory: null as BrandAsset | null,
       operation: [] as BrandAsset[],
       coverageBanner: null as BrandAsset | null,

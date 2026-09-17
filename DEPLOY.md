@@ -40,7 +40,7 @@ Depois de escolher a hospedagem:
 
 - apontar `royalnortedistribuidora.com.br` e `www.royalnortedistribuidora.com.br` para o provedor;
 - ativar SSL/HTTPS;
-- manter `app.royalnorte.com.br` apontando exclusivamente para o Portal Royal Norte.
+- manter `app.royalnortedistribuidora.com.br` apontando exclusivamente para o Portal Royal Norte.
 
 ## 4. Checklist de go-live
 

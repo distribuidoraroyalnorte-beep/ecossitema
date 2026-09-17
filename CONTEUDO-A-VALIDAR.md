@@ -24,9 +24,6 @@
 
 ## Dados ainda não preenchidos de propósito
 
-- WhatsApp comercial
-- Telefone institucional
-- E-mail institucional
 - Endereço completo da sede
 
 Esses campos ficam em `src/data/site.ts`.
