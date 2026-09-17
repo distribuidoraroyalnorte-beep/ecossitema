@@ -36,22 +36,22 @@ export const brand = {
       primary: {
         src: royalLogo,
         alt: 'Royal Norte Distribuidora',
-        width: 8527,
-        height: 3008,
+        width: 8399,
+        height: 2916,
       } satisfies BrandAsset,
       inverted: null as BrandAsset | null,
     },
     favicon: {
       src: royalLogo,
       alt: 'Royal Norte Distribuidora',
-      width: 8527,
-      height: 3008,
+      width: 8399,
+      height: 2916,
     } satisfies BrandAsset,
     socialCover: {
       src: royalLogo,
       alt: 'Royal Norte Distribuidora',
-      width: 8527,
-      height: 3008,
+      width: 8399,
+      height: 2916,
     } satisfies BrandAsset,
     images: {
       homeHero: {

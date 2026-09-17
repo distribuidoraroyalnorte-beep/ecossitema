@@ -1,5 +1,5 @@
 import alereLogo from '../assets/brands/alere.PNG'
-import alivirLogo from '../assets/brands/alivira.png'
+import aliviraLogo from '../assets/brands/alivira.png'
 import churuLogo from '../assets/brands/churu.png'
 import dentalLightLogo from '../assets/brands/dental-light.png'
 import hebronVetLogo from '../assets/brands/hebron-vet.png'
@@ -8,7 +8,7 @@ import msdLogo from '../assets/brands/msd.PNG'
 import petFitLogo from '../assets/brands/pet-fit.png'
 import pethyGroupLogo from '../assets/brands/pethygroup.PNG'
 import royalCaninLogo from '../assets/brands/royal-canin.png'
-import virbacLogo from '../assets/brands/virbac.png'
+import virbacLogo from '../assets/brands/virbac-logo-svg-vector.svg'
 import type { BrandAsset } from './brand'
 
 export type PartnerBrand = {
@@ -23,11 +23,11 @@ export const partnerBrandsByName = {
   },
   Virbac: {
     name: 'Virbac',
-    logo: { src: virbacLogo, alt: 'Virbac', width: 920, height: 920 },
+    logo: { src: virbacLogo, alt: 'Virbac', width: 2500, height: 2500 },
   },
-  Alivir: {
-    name: 'Alivir',
-    logo: { src: alivirLogo, alt: 'Alivir' },
+  Alivira: {
+    name: 'Alivira',
+    logo: { src: aliviraLogo, alt: 'Alivira' },
   },
   'MSD Saúde Animal': {
     name: 'MSD Saúde Animal',

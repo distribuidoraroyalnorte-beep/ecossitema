@@ -3,7 +3,7 @@ import { brand } from './brand'
 const paraBrands = [
   'Royal Canin',
   'Virbac',
-  'Alivir',
+  'Alivira',
   'MSD Saúde Animal',
   'Alere',
   'PethyGroup',
@@ -17,7 +17,7 @@ const paraBrands = [
 const amapaBrands = [
   'Royal Canin',
   'Virbac',
-  'Alivir',
+  'Alivira',
   'MSD Saúde Animal',
   'Alere',
   'PethyGroup',
