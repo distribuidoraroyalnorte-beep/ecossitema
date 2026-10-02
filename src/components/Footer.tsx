@@ -65,6 +65,9 @@ export default function Footer() {
           © {new Date().getFullYear()} {brand.company.name}. {footerContent.rights}
         </span>
         <Link to="/privacidade">{footerContent.privacyLabel}</Link>
+        <span className="footer-legal">
+          {site.legal.legalName} · CNPJ {site.legal.cnpj}
+        </span>
       </div>
     </footer>
   )

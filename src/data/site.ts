@@ -32,6 +32,10 @@ const maranhaoBrands = ['MSD Saúde Animal', 'Alere', 'Hebron Vet', 'PethyGroup'
 export const site = {
   since: 2005,
   portalUrl: 'https://app.royalnortedistribuidora.com.br',
+  legal: {
+    legalName: 'DAHAS CAMARA ROYAL NORTE LTDA',
+    cnpj: '07.191.747/0001-13',
+  },
   serviceArea: ['Pará', 'Amapá', 'Maranhão'],
   brandPortfolios: [
     {

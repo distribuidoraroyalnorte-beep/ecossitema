@@ -936,9 +936,17 @@ a {
   margin-top: 50px;
   padding-top: 22px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   color: #71869c;
   font-size: 16px;
+}
+.footer-legal {
+  flex-basis: 100%;
+  color: #b6c6d6;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
 }
 
 /* Premium institutional component foundation */
