@@ -44,7 +44,14 @@ export default function Footer() {
         <div>
           <h4>{footerContent.locationTitle}</h4>
           <span className="inline">
-            <MapPin size={16} /> {site.contact.address}
+            <MapPin size={16} /> Sede: {site.locations[0].city} - {site.locations[0].state}
+          </span>
+          <span>
+            Filiais:{' '}
+            {site.locations
+              .slice(1)
+              .map((location) => `${location.city} - ${location.state}`)
+              .join(' · ')}
           </span>
           <a
             className="inline"
@@ -57,7 +64,6 @@ export default function Footer() {
           <a className="inline" href={`mailto:${site.contact.email}`}>
             <Mail size={16} /> {site.contact.email}
           </a>
-          <span>{footerContent.locationText}</span>
         </div>
       </div>
       <div className="container footer-bottom">

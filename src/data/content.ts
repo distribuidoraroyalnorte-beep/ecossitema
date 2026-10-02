@@ -523,37 +523,20 @@ export const partnersContent = {
 export const contactContent = {
   hero: {
     eyebrow: 'Contato',
-    title: 'Fale com a Royal Norte.',
-    text: 'Escolha o caminho mais adequado para sua empresa e acompanhe nossos canais oficiais.',
+    title: 'Fale com a Royal Norte',
+    text: 'Nossa equipe está pronta para orientar clientes, parceiros e profissionais do mercado veterinário.',
   } satisfies HeroContent,
-  channels: {
-    eyebrow: 'Canais de atendimento',
-    title: 'Como podemos ajudar?',
-    text: 'Direcionamos cada conversa de acordo com o objetivo do contato.',
+  whatsapp: {
+    label: 'Falar pelo WhatsApp',
+    ariaLabel: 'Falar com a Royal Norte pelo WhatsApp em uma nova aba',
+    message: 'Olá! Vim pelo site da Royal Norte e gostaria de falar com a equipe.',
+    note: 'Atendimento direto pelo WhatsApp',
+  },
+  units: {
+    eyebrow: 'Presença regional',
+    title: 'Nossas unidades',
+    text: 'Encontre a sede e as filiais da Royal Norte.',
   } satisfies SectionIntro,
-  cards: [
-    {
-      icon: 'store',
-      title: 'Quero ser cliente',
-      text: 'Apresente sua empresa para iniciar um atendimento comercial.',
-      to: '/seja-cliente',
-      label: 'Iniciar cadastro',
-    },
-    {
-      icon: 'handshake',
-      title: 'Indústrias e parceiros',
-      text: 'Converse conosco sobre representação e oportunidades de parceria.',
-      to: '/parceiros',
-      label: 'Apresentar proposta',
-    },
-    {
-      icon: 'map',
-      title: 'Localização',
-      text: `${site.contact.address}. Atuação no Pará, Amapá e Maranhão.`,
-      to: '/cobertura',
-      label: 'Ver cobertura',
-    },
-  ] satisfies (CardContent & { to: string; label: string })[],
   social: {
     title: 'Acompanhe a Royal Norte',
     text: 'Conteúdo, novidades das marcas e ações do mercado veterinário.',
