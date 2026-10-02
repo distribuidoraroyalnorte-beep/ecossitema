@@ -2,7 +2,7 @@ import { Instagram, Linkedin, MapPin, MessageCircle } from 'lucide-react'
 import InstitutionalSection from '../components/InstitutionalSection'
 import { contactContent } from '../data/content'
 import { brand } from '../data/brand'
-import { site } from '../data/site'
+import { contactLinks, site } from '../data/site'
 import type { SiteLocation } from '../data/site'
 
 function mapsUrl(location: SiteLocation) {
@@ -20,8 +20,6 @@ function mapsUrl(location: SiteLocation) {
 }
 
 export default function Contact() {
-  const whatsappUrl = `https://wa.me/${site.contact.whatsapp}?${new URLSearchParams({ text: contactContent.whatsapp.message })}`
-
   return (
     <>
       <section className="page-hero contact-hero">
@@ -32,7 +30,7 @@ export default function Contact() {
           <div className="contact-actions">
             <a
               className="btn primary contact-whatsapp"
-              href={whatsappUrl}
+              href={contactLinks.generalWhatsApp}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={contactContent.whatsapp.ariaLabel}
@@ -44,7 +42,9 @@ export default function Contact() {
               {site.contact.email}
             </a>
           </div>
-          <span className="contact-channel-note">{contactContent.whatsapp.note}</span>
+          <span className="contact-channel-note">
+            {contactContent.whatsapp.phoneLabel}: {site.contact.phone}
+          </span>
         </div>
       </section>
       <InstitutionalSection intro={contactContent.units}>

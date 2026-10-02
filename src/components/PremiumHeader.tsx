@@ -75,9 +75,16 @@ export default function PremiumHeader() {
               {portalLink.label}
               <ExternalLink aria-hidden="true" size={16} />
             </a>
-            <NavLink className="header-client-cta" to={clientLink.to} onClick={closeWithoutFocus}>
+            <a
+              className="header-client-cta"
+              href={clientLink.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Seja cliente pelo WhatsApp em uma nova aba"
+              onClick={closeWithoutFocus}
+            >
               {clientLink.label}
-            </NavLink>
+            </a>
           </div>
         </nav>
         <button

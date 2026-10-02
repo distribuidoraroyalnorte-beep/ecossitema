@@ -4,6 +4,22 @@ import Logo from './Logo'
 import { footerContent, footerNavigation, site } from '../data/site'
 import { brand } from '../data/brand'
 
+function FooterLink({ item }: { item: (typeof footerNavigation)[number] }) {
+  if ('href' in item) {
+    return (
+      <a
+        href={item.href}
+        target={'newTab' in item && item.newTab ? '_blank' : undefined}
+        rel={'newTab' in item && item.newTab ? 'noopener noreferrer' : undefined}
+      >
+        {item.label}
+      </a>
+    )
+  }
+
+  return <Link to={item.to}>{item.label}</Link>
+}
+
 export default function Footer() {
   return (
     <footer className="site-footer">
@@ -28,17 +44,13 @@ export default function Footer() {
         <div>
           <h4>{footerContent.navigationTitle}</h4>
           {footerNavigation.slice(0, 4).map((item) => (
-            <Link key={item.to} to={item.to}>
-              {item.label}
-            </Link>
+            <FooterLink key={item.label} item={item} />
           ))}
         </div>
         <div>
           <h4>{footerContent.institutionalTitle}</h4>
           {footerNavigation.slice(4).map((item) => (
-            <Link key={item.to} to={item.to}>
-              {item.label}
-            </Link>
+            <FooterLink key={item.label} item={item} />
           ))}
         </div>
         <div>

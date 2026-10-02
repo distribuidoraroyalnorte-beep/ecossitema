@@ -769,18 +769,59 @@ a {
   margin: 0;
   color: var(--color-text-muted);
 }
-.form-layout {
-  display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  gap: 80px;
+.conversion-page .page-hero .btn,
+.conversion-panel-actions .btn {
+  min-height: 60px;
+  padding-inline: var(--space-8);
+  font-size: 18px;
 }
-.form-intro h2 {
-  font-size: 44px;
+.conversion-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: var(--space-16);
+  align-items: center;
+}
+.conversion-intro h2 {
+  margin: var(--space-3) 0;
+  font-size: clamp(34px, 4vw, 44px);
   letter-spacing: -0.04em;
 }
-.form-intro > p {
+.conversion-intro > p {
   color: var(--muted);
   line-height: 1.8;
+}
+.conversion-contact {
+  display: block;
+  margin-top: var(--space-6);
+  color: var(--color-primary);
+  font-size: 22px;
+}
+.check-list.conversion-benefits {
+  margin: 0;
+  padding: var(--space-8);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  background: var(--color-surface);
+}
+.conversion-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-12);
+}
+.conversion-panel-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  flex: none;
+}
+.conversion-email {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
 }
 .check-list {
   padding: 0;
@@ -797,100 +838,6 @@ a {
 .check-list svg {
   color: #2e9b67;
   width: 20px;
-}
-.contact-form {
-  padding: 34px;
-  border: 1px solid var(--line);
-  border-radius: 24px;
-  box-shadow: var(--shadow);
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-.contact-form label {
-  font-size: 16px;
-  font-weight: var(--font-weight-semibold);
-  color: #334055;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
-  padding: 14px 15px;
-  border: 1px solid #d7e0e9;
-  border-radius: 11px;
-  outline: none;
-  background: #fbfcfd;
-}
-.contact-form input:focus,
-.contact-form select:focus,
-.contact-form textarea:focus {
-  border-color: var(--blue2);
-  box-shadow: 0 0 0 3px rgba(237, 27, 35, 0.1);
-}
-.field-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
-.form-fields {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px 14px;
-}
-.full-field {
-  grid-column: 1 / -1;
-}
-.form-consent {
-  flex-direction: row !important;
-  align-items: flex-start;
-  font-weight: 500 !important;
-  line-height: 1.6;
-}
-.form-consent input {
-  margin-top: 3px;
-}
-.form-consent a {
-  color: var(--blue2);
-  text-decoration: underline;
-}
-.form-note {
-  font-size: 16px;
-  background: var(--color-red-100);
-  padding: 12px;
-  border-radius: 10px;
-  color: var(--color-red-700);
-}
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-.contact-grid article {
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  padding: 30px;
-}
-.contact-grid svg {
-  color: var(--blue2);
-}
-.contact-grid span {
-  font-size: 16px;
-  font-weight: var(--font-weight-semibold);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--muted);
-  display: block;
-  margin-top: 25px;
-}
-.contact-grid h3 {
-  font-size: 20px;
-}
-.contact-grid p {
-  color: var(--muted);
-  font-size: 16px;
 }
 .social-panel {
   margin-top: 40px;
@@ -1342,9 +1289,13 @@ a.brand-logo-wall-item:hover {
   }
   .coverage-grid,
   .split,
-  .form-layout {
+  .conversion-layout {
     grid-template-columns: 1fr;
     gap: 50px;
+  }
+  .conversion-panel {
+    align-items: flex-start;
+    flex-direction: column;
   }
   .coverage-copy {
     max-width: 700px;
@@ -1442,17 +1393,10 @@ a.brand-logo-wall-item:hover {
   .page-hero h1 {
     font-size: 45px;
   }
-  .field-row {
-    grid-template-columns: 1fr;
-  }
-  .form-fields {
-    grid-template-columns: 1fr;
-  }
-  .full-field {
-    grid-column: auto;
-  }
-  .contact-form {
-    padding: 22px;
+  .conversion-page .page-hero .btn,
+  .conversion-panel-actions,
+  .conversion-panel-actions .btn {
+    width: 100%;
   }
   .social-panel,
   .footer-bottom {

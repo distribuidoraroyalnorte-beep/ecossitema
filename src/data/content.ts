@@ -1,4 +1,4 @@
-import { site } from './site'
+import { contactLinks } from './site'
 
 export type IconName =
   | 'boxes'
@@ -21,6 +21,7 @@ export type ActionContent = {
   to: string
   style?: 'primary' | 'ghost' | 'light'
   external?: boolean
+  ariaLabel?: string
 }
 
 export type HeroContent = {
@@ -47,51 +48,6 @@ export type CardContent = {
   eyebrow?: string
 }
 
-export type FormField = {
-  name: string
-  label: string
-  type?: 'text' | 'email' | 'tel' | 'textarea' | 'select'
-  required?: boolean
-  options?: readonly string[]
-  full?: boolean
-}
-
-export type FormContent = {
-  subject: string
-  submitLabel: string
-  privacyLabel: string
-  unavailableMessage: string
-  fields: FormField[]
-}
-
-export const formUi = {
-  selectOption: 'Selecione',
-  missingValue: 'Não informado',
-  privacyLink: 'Saiba mais.',
-  whatsappOpened: 'O atendimento foi aberto em uma nova janela.',
-  emailOpened: 'Seu aplicativo de e-mail foi aberto para concluir o envio.',
-} as const
-
-const customerFields: FormField[] = [
-  { name: 'nome', label: 'Nome responsável', required: true },
-  { name: 'empresa', label: 'Empresa', required: true },
-  { name: 'cidade', label: 'Cidade / UF', required: true },
-  {
-    name: 'telefone',
-    label: 'Telefone',
-    type: 'tel',
-    required: true,
-  },
-  { name: 'cnpj', label: 'CNPJ' },
-  { name: 'segmento', label: 'Segmento', type: 'select', required: true, options: site.segments },
-  {
-    name: 'mensagem',
-    label: 'Como podemos ajudar?',
-    type: 'textarea',
-    full: true,
-  },
-]
-
 export const homeContent = {
   hero: {
     eyebrow: 'Pará · Amapá · Maranhão',
@@ -99,8 +55,8 @@ export const homeContent = {
     highlight: 'presença regional',
     text: 'Conectamos grandes marcas, clientes e profissionais veterinários através de uma operação comercial preparada para a realidade da região.',
     actions: [
-      { label: 'Seja cliente', to: '/seja-cliente', style: 'primary' },
-      { label: 'Seja parceiro', to: '/parceiros', style: 'ghost' },
+      { label: 'Seja cliente', to: contactLinks.clientWhatsApp, style: 'primary', external: true },
+      { label: 'Seja parceiro', to: contactLinks.partnershipEmail, style: 'ghost', external: true },
     ],
   } satisfies HeroContent,
   capabilities: {
@@ -157,8 +113,18 @@ export const homeContent = {
     title: 'Encontre o caminho certo para falar com a Royal Norte.',
     text: 'Atendemos empresas interessadas em comprar e marcas que desejam desenvolver sua presença regional.',
     actions: [
-      { label: 'Quero ser cliente', to: '/seja-cliente', style: 'primary' },
-      { label: 'Quero ser parceiro', to: '/parceiros', style: 'ghost' },
+      {
+        label: 'Quero ser cliente',
+        to: contactLinks.clientWhatsApp,
+        style: 'primary',
+        external: true,
+      },
+      {
+        label: 'Quero ser parceiro',
+        to: contactLinks.partnershipEmail,
+        style: 'ghost',
+        external: true,
+      },
     ],
   } satisfies CTAContent,
 }
@@ -320,7 +286,9 @@ export const activityContent = {
     eyebrow: 'Atendimento comercial',
     title: 'Quer comprar com a Royal Norte?',
     text: 'Apresente sua empresa e inicie o contato com nossa equipe.',
-    actions: [{ label: 'Seja cliente', to: '/seja-cliente', style: 'primary' }],
+    actions: [
+      { label: 'Seja cliente', to: contactLinks.clientWhatsApp, style: 'primary', external: true },
+    ],
   } satisfies CTAContent,
 }
 
@@ -364,7 +332,14 @@ export const brandsContent = {
     eyebrow: 'Novas parcerias',
     title: 'Sua marca quer ampliar a presença regional?',
     text: 'Conheça a atuação da Royal Norte no Pará, Amapá e Maranhão.',
-    actions: [{ label: 'Fale sobre parcerias', to: '/parceiros', style: 'primary' }],
+    actions: [
+      {
+        label: 'Fale sobre parcerias',
+        to: contactLinks.partnershipEmail,
+        style: 'primary',
+        external: true,
+      },
+    ],
   } satisfies CTAContent,
 }
 
@@ -406,7 +381,14 @@ export const coverageContent = {
     eyebrow: 'Consulte sua região',
     title: 'Quer saber se atendemos sua cidade?',
     text: 'Envie os dados da sua empresa para nosso time comercial.',
-    actions: [{ label: 'Consultar atendimento', to: '/seja-cliente', style: 'primary' }],
+    actions: [
+      {
+        label: 'Consultar atendimento',
+        to: contactLinks.clientWhatsApp,
+        style: 'primary',
+        external: true,
+      },
+    ],
   } satisfies CTAContent,
 }
 
@@ -414,27 +396,26 @@ export const customerContent = {
   hero: {
     eyebrow: 'Seja cliente',
     title: 'Vamos colocar a Royal Norte ao lado do seu negócio.',
-    text: 'Apresente sua empresa para iniciar o contato com nosso time comercial.',
+    text: 'Fale diretamente com nossa equipe comercial pelo WhatsApp para iniciar seu cadastro e atendimento.',
+    actions: [
+      {
+        label: 'Falar pelo WhatsApp',
+        to: contactLinks.clientWhatsApp,
+        style: 'primary',
+        external: true,
+      },
+    ],
   } satisfies HeroContent,
   intro: {
-    eyebrow: 'Cadastro comercial',
-    title: 'Conte um pouco sobre sua empresa.',
-    text: 'As informações ajudam nossa equipe a direcionar o atendimento de acordo com seu perfil e região.',
+    eyebrow: 'Atendimento comercial',
+    title: 'O próximo passo é uma conversa.',
+    text: 'Nossa equipe dará continuidade ao cadastro e orientará o atendimento conforme o perfil e a região da sua empresa.',
   },
   benefits: [
     'Atendimento regional',
     'Portfólio de marcas reconhecidas',
     'Equipe comercial próxima',
   ],
-  form: {
-    subject: 'Interesse em ser cliente Royal Norte',
-    submitLabel: 'Enviar interesse',
-    privacyLabel:
-      'Li a Política de Privacidade e autorizo o uso destes dados para retorno comercial.',
-    unavailableMessage:
-      'O envio online está temporariamente indisponível. Tente novamente pelos canais da página de contato.',
-    fields: customerFields,
-  } satisfies FormContent,
 }
 
 export const partnersContent = {
@@ -442,6 +423,14 @@ export const partnersContent = {
     eyebrow: 'Indústrias e parceiros',
     title: 'Presença regional para marcas que querem ampliar mercados.',
     text: 'Construímos relações de longo prazo com empresas interessadas em desenvolver oportunidades no Pará, Amapá e Maranhão.',
+    actions: [
+      {
+        label: 'Quero falar sobre parceria',
+        to: contactLinks.partnershipEmail,
+        style: 'primary',
+        external: true,
+      },
+    ],
   } satisfies HeroContent,
   value: {
     intro: {
@@ -473,51 +462,9 @@ export const partnersContent = {
   },
   intro: {
     eyebrow: 'Novas parcerias',
-    title: 'Apresente sua empresa ou marca.',
-    text: 'Compartilhe as informações iniciais para direcionarmos a conversa.',
+    title: 'Vamos conversar sobre sua marca.',
+    text: 'Envie uma mensagem por e-mail para iniciar a conversa sobre uma possível parceria comercial.',
   },
-  form: {
-    subject: 'Parceria com a Royal Norte',
-    submitLabel: 'Enviar proposta',
-    privacyLabel:
-      'Li a Política de Privacidade e autorizo o uso destes dados para retorno comercial.',
-    unavailableMessage:
-      'O envio online está temporariamente indisponível. Utilize os canais da página de contato.',
-    fields: [
-      { name: 'nome', label: 'Nome responsável', required: true },
-      {
-        name: 'empresa',
-        label: 'Empresa ou marca',
-        required: true,
-      },
-      {
-        name: 'email',
-        label: 'E-mail',
-        type: 'email',
-        required: true,
-      },
-      {
-        name: 'telefone',
-        label: 'Telefone',
-        type: 'tel',
-        required: true,
-      },
-      { name: 'categoria', label: 'Categoria' },
-      {
-        name: 'regiao',
-        label: 'Região de interesse',
-        type: 'select',
-        options: site.serviceArea,
-      },
-      {
-        name: 'mensagem',
-        label: 'Sobre a proposta',
-        type: 'textarea',
-        required: true,
-        full: true,
-      },
-    ],
-  } satisfies FormContent,
 }
 
 export const contactContent = {
@@ -529,8 +476,7 @@ export const contactContent = {
   whatsapp: {
     label: 'Falar pelo WhatsApp',
     ariaLabel: 'Falar com a Royal Norte pelo WhatsApp em uma nova aba',
-    message: 'Olá! Vim pelo site da Royal Norte e gostaria de falar com a equipe.',
-    note: 'Atendimento direto pelo WhatsApp',
+    phoneLabel: 'Canal comercial',
   },
   units: {
     eyebrow: 'Presença regional',
@@ -554,7 +500,7 @@ export const privacyContent = {
     {
       title: 'Dados coletados',
       paragraphs: [
-        'Podemos receber dados de identificação e contato, informações profissionais e dados da empresa fornecidos voluntariamente em nossos formulários.',
+        'Podemos receber dados de identificação e contato, informações profissionais e dados da empresa fornecidos voluntariamente pelos canais de WhatsApp e e-mail.',
       ],
     },
     {

@@ -52,15 +52,6 @@ const locations: SiteLocation[] = [
     zipCode: '67.013-710',
   },
   {
-    name: 'Filial São Luís',
-    label: 'Filial',
-    city: 'São Luís',
-    state: 'MA',
-    address: 'Av. Casemiro Júnior, nº 33',
-    district: 'Anil',
-    zipCode: '65.045-180',
-  },
-  {
     name: 'Filial Macapá',
     label: 'Filial',
     city: 'Macapá',
@@ -68,6 +59,15 @@ const locations: SiteLocation[] = [
     address: 'Av. Stephan Houat, Residencial Extremo Norte, nº 420',
     district: 'Jardim Marco Zero',
     zipCode: '68.903-193',
+  },
+  {
+    name: 'Filial São Luís',
+    label: 'Filial',
+    city: 'São Luís',
+    state: 'MA',
+    address: 'Av. Casemiro Júnior, nº 33',
+    district: 'Anil',
+    zipCode: '65.045-180',
   },
 ]
 
@@ -106,13 +106,12 @@ export const site = {
     email: 'comercial@royalnorte.com.br',
   },
   brands: paraBrands,
-  segments: [
-    'Pet shops',
-    'Clínicas veterinárias',
-    'Hospitais veterinários',
-    'Médicos-veterinários',
-    'Lojistas especializados',
-  ],
+} as const
+
+export const contactLinks = {
+  clientWhatsApp: `https://wa.me/${site.contact.whatsapp}?text=${encodeURIComponent('Olá! Vim pelo site da Royal Norte e gostaria de falar com a equipe comercial para me tornar cliente.')}`,
+  generalWhatsApp: `https://wa.me/${site.contact.whatsapp}?text=${encodeURIComponent('Olá! Vim pelo site da Royal Norte e gostaria de falar com a equipe.')}`,
+  partnershipEmail: `mailto:${site.contact.email}?subject=${encodeURIComponent('Parceria comercial - Royal Norte')}&body=${encodeURIComponent('Olá! Vim pelo site da Royal Norte e gostaria de conversar sobre uma possível parceria comercial.')}`,
 } as const
 
 export const navigation = [
@@ -131,7 +130,7 @@ export const portalLink = {
 
 export const clientLink = {
   label: 'Seja cliente',
-  to: '/seja-cliente',
+  href: contactLinks.clientWhatsApp,
 } as const
 
 export const navigationUi = {
@@ -145,8 +144,8 @@ export const footerNavigation = [
   { to: '/atuacao', label: 'Como atuamos' },
   { to: '/marcas', label: 'Marcas' },
   { to: '/cobertura', label: 'Cobertura' },
-  { to: '/seja-cliente', label: 'Seja cliente' },
-  { to: '/parceiros', label: 'Indústrias e parceiros' },
+  { href: contactLinks.clientWhatsApp, label: 'Seja cliente', newTab: true },
+  { href: contactLinks.partnershipEmail, label: 'Indústrias e parceiros' },
   { to: '/contato', label: 'Contato' },
   { to: '/privacidade', label: 'Privacidade' },
 ] as const
