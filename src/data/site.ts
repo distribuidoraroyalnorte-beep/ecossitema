@@ -27,7 +27,7 @@ const amapaBrands = [
   'Pet Fit',
 ] as const
 
-const maranhaoBrands = ['MSD Saúde Animal', 'Alere', 'Hebron Vet', 'PethyGroup'] as const
+const maranhaoBrands = ['MSD Saúde Animal', 'Alere', 'Hebron Vet', 'PethyGroup', 'Alivira'] as const
 
 export type SiteLocation = {
   name: string
