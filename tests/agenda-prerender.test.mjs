@@ -52,3 +52,21 @@ test('institutional entry remains the original React SPA and metadata', async ()
   assert.match(html, /<div id="root"><\/div>/)
   assert.doesNotMatch(html, /data-prerendered/)
 })
+
+test('clean SSR bundle exports render with all public page data in its return value', async () => {
+  const { render } = await import('../node_modules/.cache/agenda-prerender/entry-prerender.mjs')
+  assert.equal(typeof render, 'function')
+  const pages = render()
+  assert.deepEqual(
+    pages.map((page) => page.path),
+    ['/agenda', '/agenda/privacidade', '/agenda/termos'],
+  )
+  for (const page of pages) {
+    assert.equal(page.siteOrigin, 'https://royalnortedistribuidora.com.br')
+    assert.ok(page.metadata.title.length > 10)
+    assert.ok(page.metadata.description.length > 30)
+    assert.ok(page.markup.includes('<main'))
+    assert.ok(page.markup.includes('<h1'))
+    assert.ok(page.markup.includes('<footer'))
+  }
+})

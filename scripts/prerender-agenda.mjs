@@ -1,14 +1,10 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises'
 import { resolve } from 'node:path'
-import {
-  render,
-  agendaMetadata,
-  siteOrigin,
-} from '../node_modules/.cache/agenda-prerender/entry-prerender.mjs'
+import { render } from '../node_modules/.cache/agenda-prerender/entry-prerender.mjs'
 
 const template = await readFile(resolve('dist/index.html'), 'utf8')
 const escape = (value) => value.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;')
-for (const [path, metadata] of Object.entries(agendaMetadata)) {
+for (const { path, markup, metadata, siteOrigin } of render()) {
   const url = siteOrigin + path + '/'
   let html = template.replace(
     /<title>[^<]*<\/title>/,
@@ -34,7 +30,6 @@ for (const [path, metadata] of Object.entries(agendaMetadata)) {
       escape(metadata.description) +
       '" /></head>',
   )
-  const markup = render(path + '/')
   if (!markup.includes('<main') || !markup.includes('<h1') || !markup.includes('<footer'))
     throw new Error('Incomplete prerender: ' + path)
   // Callback replacement preserves literal dollar characters from rendered content.
