@@ -1483,3 +1483,43 @@ a.brand-logo-wall-item:hover {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Agenda: same institutional typography, surfaces and interaction tokens. */
+.agenda-content a:not(.btn) {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  overflow-wrap: anywhere;
+}
+.agenda-content .agenda-access-notice {
+  padding: var(--space-5) var(--space-6);
+  color: var(--color-primary);
+  background: var(--color-surface);
+  border-left: 4px solid var(--color-action);
+  border-radius: var(--radius-sm);
+}
+.agenda-features {
+  padding-left: var(--space-6);
+  line-height: var(--line-height-body);
+}
+.agenda-features li + li {
+  margin-top: var(--space-3);
+}
+.agenda-legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+.agenda-legal-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--button-min-height);
+}
+.agenda-legal-links .btn {
+  white-space: normal;
+  text-align: left;
+}
+.agenda-legal-links svg {
+  flex-shrink: 0;
+}

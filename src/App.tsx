@@ -12,6 +12,10 @@ import Partners from './pages/Partners'
 import Contact from './pages/Contact'
 import Privacy from './pages/Privacy'
 import NotFound from './pages/NotFound'
+import Agenda from './pages/Agenda'
+import AgendaPrivacy from './pages/AgendaPrivacy'
+import AgendaTerms from './pages/AgendaTerms'
+import PageMetadata from './components/PageMetadata'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -26,6 +30,7 @@ export default function App() {
   return (
     <div className="app-shell">
       <ScrollToTop />
+      <PageMetadata />
       <a className="skip-link" href="#main-content">
         Pular para o conteúdo principal
       </a>
@@ -40,6 +45,9 @@ export default function App() {
           <Route path="/seja-cliente" element={<BecomeClient />} />
           <Route path="/parceiros" element={<Partners />} />
           <Route path="/contato" element={<Contact />} />
+          <Route path="/agenda" element={<Agenda />} />
+          <Route path="/agenda/privacidade" element={<AgendaPrivacy />} />
+          <Route path="/agenda/termos" element={<AgendaTerms />} />
           <Route path="/privacidade" element={<Privacy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

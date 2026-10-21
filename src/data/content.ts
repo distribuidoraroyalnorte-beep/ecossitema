@@ -1,4 +1,4 @@
-import { contactLinks } from './site'
+import { contactLinks, site } from './site'
 
 export type IconName =
   | 'boxes'
@@ -541,4 +541,195 @@ export const notFoundContent = {
   title: 'Página não encontrada.',
   text: 'O endereço pode ter sido alterado ou não existe.',
   action: 'Voltar ao início',
+}
+
+// Data documental fixa: atualizar somente quando estes documentos forem revisados.
+export const agendaPublicationDate = '21 de outubro de 2026'
+
+export const agendaContent = {
+  hero: {
+    eyebrow: 'Ferramentas corporativas',
+    title: 'Agenda de Reuniões | Royal Norte',
+    text: 'Ferramenta corporativa de acesso restrito aos colaboradores autorizados da Royal Norte Distribuidora para organizar compromissos profissionais.',
+  } satisfies HeroContent,
+  accessNotice: 'Acesso restrito aos colaboradores autorizados.',
+  introduction:
+    'Esta página é pública e exclusivamente informativa. O sistema da Agenda e seus dados permanecem privados, protegidos por autenticação obrigatória e controle de acesso.',
+  featuresTitle: 'Organização de reuniões profissionais',
+  features: [
+    'Cadastro, consulta, edição, reagendamento, transferência e cancelamento de reuniões.',
+    'Definição de responsáveis e participantes.',
+    'Integração ao Google Calendar para criação, consulta, atualização e cancelamento de eventos.',
+    'Possibilidade de associar ou gerar reuniões no Google Meet, quando a integração disponibilizar esse recurso.',
+    'Envio de convites e lembretes aos participantes envolvidos.',
+    'Histórico operacional e controle interno.',
+    'Autenticação obrigatória para acesso às informações da agenda.',
+  ],
+  googleTitle: 'Uso de serviços Google',
+  googleText:
+    'A aplicação utiliza serviços Google exclusivamente para administrar compromissos profissionais autorizados e suas notificações. As integrações operam conforme as permissões concedidas e os recursos disponíveis nas contas corporativas.',
+  legalTitle: 'Privacidade e condições de uso',
+  legalText: 'Consulte como os dados são tratados e as responsabilidades no uso da ferramenta.',
+  legalLinks: [
+    { label: 'Política de Privacidade da Agenda', to: '/agenda/privacidade' },
+    { label: 'Termos de Uso da Agenda', to: '/agenda/termos', style: 'ghost' },
+  ] satisfies ActionContent[],
+}
+
+export const agendaPrivacyContent = {
+  hero: {
+    eyebrow: 'Agenda de Reuniões',
+    title: 'Política de Privacidade da Agenda',
+    text: 'Informações sobre o tratamento de dados na ferramenta corporativa de reuniões da Royal Norte.',
+  } satisfies HeroContent,
+  sections: [
+    {
+      title: 'Responsável pelo tratamento',
+      paragraphs: [
+        `A Agenda é uma ferramenta corporativa da Royal Norte Distribuidora, operada por ${site.legal.legalName}, CNPJ ${site.legal.cnpj}. Seu acesso é restrito aos colaboradores autorizados. Esta política é específica da Agenda e não substitui a política institucional do site.`,
+      ],
+    },
+    {
+      title: 'Finalidades do tratamento',
+      paragraphs: [
+        'Os dados são utilizados para organização comercial, reuniões internas e com convidados, definição de responsáveis e participantes, gestão de convites, notificações e lembretes, histórico operacional, controle interno e integrações com serviços Google autorizados.',
+      ],
+    },
+    {
+      title: 'Dados tratados',
+      paragraphs: [
+        'Podem ser tratados dados de identificação de colaboradores; nomes e e-mails de participantes; título e tipo da reunião; data, horários, status, local ou link; observações; identificadores de eventos sincronizados; histórico de alterações; e informações técnicas necessárias à autenticação e à segurança. Os usuários devem inserir somente dados pertinentes à finalidade profissional da reunião.',
+      ],
+    },
+    {
+      title: 'Google Calendar e Google Meet',
+      paragraphs: [
+        'Conforme as autorizações concedidas, a aplicação utiliza recursos do Google Calendar para criar, consultar, atualizar e cancelar compromissos, enviar convites e notificações e, quando disponível na integração, associar ou gerar reuniões virtuais no Google Meet. Esses recursos são utilizados exclusivamente para administrar compromissos profissionais autorizados.',
+      ],
+    },
+    {
+      title: 'Uso dos dados',
+      paragraphs: [
+        'Os dados não são vendidos nem utilizados para publicidade. A aplicação não acessa senhas das Contas Google. As permissões de integração são utilizadas para as funcionalidades informadas nesta política.',
+      ],
+    },
+    {
+      title: 'Armazenamento',
+      paragraphs: [
+        'Registros da Agenda podem ser armazenados em recursos corporativos controlados pela Royal Norte, incluindo planilhas e informações operacionais necessárias ao funcionamento da ferramenta. Eventos e informações associados às integrações também podem permanecer nos serviços Google utilizados.',
+      ],
+    },
+    {
+      title: 'Compartilhamento',
+      paragraphs: [
+        'Eventos, convites e dados necessários às integrações podem ser compartilhados com o Google e com os participantes envolvidos, conforme as funcionalidades utilizadas. O acesso interno deve se limitar às pessoas autorizadas e às necessidades profissionais correspondentes. Também poderá ocorrer compartilhamento para cumprir obrigações legais aplicáveis.',
+      ],
+    },
+    {
+      title: 'Segurança',
+      paragraphs: [
+        'A Royal Norte utiliza controle de acesso, autenticação e medidas razoáveis de proteção contra acesso, uso, alteração e divulgação não autorizados. Colaboradores devem preservar suas credenciais e a confidencialidade das informações a que têm acesso. Nenhuma medida elimina integralmente os riscos de segurança.',
+      ],
+    },
+    {
+      title: 'Retenção e exclusão',
+      paragraphs: [
+        'Os dados são mantidos conforme as necessidades operacionais e as obrigações legais aplicáveis. Solicitações de exclusão devem ser encaminhadas ao contato institucional indicado nesta página. Registros podem ser preservados para cumprimento de obrigações legais, segurança e auditoria interna, quando aplicável.',
+      ],
+    },
+    {
+      title: 'Direitos dos titulares e LGPD',
+      paragraphs: [
+        'Nos termos da Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018), o titular pode solicitar confirmação de tratamento, acesso, correção e demais providências aplicáveis, incluindo informações sobre compartilhamento, anonimização, bloqueio ou eliminação quando cabíveis e revogação de consentimento quando essa for a base utilizada. As solicitações serão avaliadas conforme a legislação, podendo ser necessária a confirmação da identidade do solicitante.',
+      ],
+    },
+    {
+      title: 'Uso Limitado das APIs Google',
+      paragraphs: [
+        'O uso das informações recebidas das APIs Google observará a Política de Dados do Usuário dos Serviços de API do Google, incluindo seus requisitos de Uso Limitado, quando aplicáveis.',
+      ],
+      link: {
+        label: 'Consultar a Política de Dados do Usuário dos Serviços de API do Google',
+        href: 'https://developers.google.com/terms/api-services-user-data-policy',
+      },
+    },
+    {
+      title: 'Contato',
+      paragraphs: [
+        'Para dúvidas, solicitações sobre dados pessoais ou exercício de direitos, utilize o e-mail institucional da Royal Norte:',
+      ],
+      link: { label: site.contact.email, href: `mailto:${site.contact.email}` },
+    },
+    {
+      title: 'Atualizações desta política',
+      paragraphs: [
+        'Esta política pode ser revisada para refletir alterações nas funcionalidades ou nos requisitos aplicáveis. A data de publicação ou revisão será registrada neste documento.',
+      ],
+    },
+  ],
+}
+
+export const agendaTermsContent = {
+  hero: {
+    eyebrow: 'Agenda de Reuniões',
+    title: 'Termos de Uso da Agenda',
+    text: 'Condições para utilização da ferramenta corporativa de reuniões da Royal Norte.',
+  } satisfies HeroContent,
+  sections: [
+    {
+      title: 'Finalidade e acesso',
+      paragraphs: [
+        `A Agenda de Reuniões de ${site.legal.legalName}, CNPJ ${site.legal.cnpj}, destina-se exclusivamente ao uso corporativo. O acesso às informações é limitado a colaboradores autorizados e exige autenticação. Estas páginas públicas são informativas e não concedem acesso ao sistema.`,
+      ],
+    },
+    {
+      title: 'Credenciais e confidencialidade',
+      paragraphs: [
+        'É proibido compartilhar credenciais, permitir acesso por terceiros não autorizados ou utilizar o acesso de outra pessoa. O usuário deve preservar a confidencialidade das informações, respeitar as permissões recebidas e comunicar suspeitas de uso indevido pelos canais institucionais.',
+      ],
+    },
+    {
+      title: 'Informações e convidados',
+      paragraphs: [
+        'O usuário é responsável pela veracidade, atualização e pertinência das informações cadastradas, pelos convidados incluídos e pelos dados inseridos. Deve verificar destinatários, datas, horários e links antes de enviar convites ou alterar reuniões, evitando inserir informações desnecessárias ou dados que não esteja autorizado a utilizar.',
+      ],
+    },
+    {
+      title: 'Integrações, convites e notificações',
+      paragraphs: [
+        'A ferramenta pode utilizar o Google Calendar para criar, consultar, atualizar e cancelar eventos e, quando disponível, associar ou gerar reuniões no Google Meet. Convites, lembretes e notificações podem ser enviados aos participantes envolvidos. Essas funcionalidades dependem das autorizações concedidas, da configuração corporativa e da disponibilidade dos serviços Google.',
+      ],
+    },
+    {
+      title: 'Suspensão ou revogação de acesso',
+      paragraphs: [
+        'A Royal Norte pode suspender ou revogar o acesso por necessidade operacional, alteração de vínculo ou função, descumprimento destes termos, uso indevido ou razões de segurança, conforme as regras internas aplicáveis.',
+      ],
+    },
+    {
+      title: 'Manutenção e disponibilidade',
+      paragraphs: [
+        'A Agenda pode passar por manutenção, atualizações ou indisponibilidades, inclusive em razão de falhas nas integrações ou nos serviços de terceiros. Não há garantia de disponibilidade ininterrupta. Os usuários devem seguir as orientações internas para situações que exijam continuidade operacional.',
+      ],
+    },
+    {
+      title: 'Tratamento de dados pessoais',
+      paragraphs: [
+        'O tratamento dos dados relacionados à Agenda observa sua Política de Privacidade específica. Consulte o documento para conhecer finalidades, dados tratados, compartilhamento, retenção e canais para solicitações.',
+      ],
+    },
+    {
+      title: 'Legislação e atualizações',
+      paragraphs: [
+        'Estes termos são regidos pela legislação brasileira. Alterações nas condições de uso serão refletidas neste documento, com indicação da data de publicação ou revisão.',
+      ],
+    },
+    {
+      title: 'Contato institucional',
+      paragraphs: [
+        'Para dúvidas sobre o uso da Agenda ou estes termos, entre em contato com a Royal Norte:',
+      ],
+      link: { label: site.contact.email, href: `mailto:${site.contact.email}` },
+    },
+  ],
 }
