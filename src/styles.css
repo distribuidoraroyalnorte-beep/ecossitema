@@ -1523,3 +1523,27 @@ a.brand-logo-wall-item:hover {
 .agenda-legal-links svg {
   flex-shrink: 0;
 }
+
+/* Static Agenda pages retain usable institutional navigation without JavaScript. */
+@media (max-width: 1080px) {
+  .no-js .site-header {
+    position: static;
+  }
+  .no-js .header-inner {
+    height: auto;
+    flex-wrap: wrap;
+    padding-block: var(--space-4);
+  }
+  .no-js .main-nav {
+    display: flex;
+    position: static;
+    width: 100%;
+    max-height: none;
+    box-shadow: none;
+    border: 0;
+    padding: var(--space-4) 0;
+  }
+  .no-js .menu-toggle {
+    display: none;
+  }
+}

@@ -8,7 +8,7 @@ export default function PageMetadata() {
     const path = pathname.replace(/\/+$/, '') || '/'
     const agenda = agendaMetadata[path]
     const metadata = agenda ?? institutionalMetadata
-    const url = `${siteOrigin}${path}`
+    const url = `${siteOrigin}${path}${agenda ? '/' : ''}`
     document.title = metadata.title
     const meta = (attribute: 'name' | 'property', name: string, value: string) => {
       let element = document.head.querySelector<HTMLMetaElement>(`meta[${attribute}="${name}"]`)

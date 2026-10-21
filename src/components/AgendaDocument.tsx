@@ -34,9 +34,9 @@ export default function AgendaDocument({ content }: { content: DocumentContent }
             </section>
           ))}
           <nav className="agenda-legal-links" aria-label="Navegação da Agenda">
-            <Link to="/agenda">Voltar à Agenda</Link>
-            <Link to="/agenda/privacidade">Política de Privacidade da Agenda</Link>
-            <Link to="/agenda/termos">Termos de Uso da Agenda</Link>
+            <Link to="/agenda/">Voltar à Agenda</Link>
+            <Link to="/agenda/privacidade/">Política de Privacidade da Agenda</Link>
+            <Link to="/agenda/termos/">Termos de Uso da Agenda</Link>
           </nav>
         </div>
       </section>

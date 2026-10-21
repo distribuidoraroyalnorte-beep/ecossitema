@@ -8,5 +8,5 @@
     "tsBuildInfoFile": "./node_modules/.cache/tsconfig.node.tsbuildinfo",
     "noEmit": true
   },
-  "include": ["vite.config.ts", "src/data/page-metadata.ts"]
+  "include": ["vite.config.ts"]
 }

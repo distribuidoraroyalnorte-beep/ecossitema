@@ -11,7 +11,17 @@ export default function Agenda() {
           <p className="agenda-access-notice">
             <strong>{agendaContent.accessNotice}</strong>
           </p>
+          <h2>{agendaContent.applicationName}</h2>
           <p className="lead">{agendaContent.introduction}</p>
+          <section aria-labelledby="agenda-public-access">
+            <h2 id="agenda-public-access">{agendaContent.accessTitle}</h2>
+            <p>
+              <strong>Página pública:</strong> {agendaContent.publicPageText}
+            </p>
+            <p>
+              <strong>Sistema interno:</strong> {agendaContent.internalSystemText}
+            </p>
+          </section>
           <section aria-labelledby="agenda-features">
             <h2 id="agenda-features">{agendaContent.featuresTitle}</h2>
             <ul className="agenda-features">

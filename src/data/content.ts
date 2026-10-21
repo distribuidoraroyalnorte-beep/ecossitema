@@ -552,17 +552,23 @@ export const agendaContent = {
     title: 'Agenda de Reuniões | Royal Norte',
     text: 'Ferramenta corporativa de acesso restrito aos colaboradores autorizados da Royal Norte Distribuidora para organizar compromissos profissionais.',
   } satisfies HeroContent,
-  accessNotice: 'Acesso restrito aos colaboradores autorizados.',
+  applicationName: 'Agenda Royal Norte Comercial',
+  accessNotice: 'O sistema interno é restrito aos colaboradores autorizados.',
+  accessTitle: 'Página pública e sistema interno',
+  publicPageText:
+    'esta apresentação institucional da ferramenta é aberta a qualquer pessoa, sem login ou autorização.',
+  internalSystemText:
+    'o ambiente que contém dados reais das reuniões exige autenticação e autorização. Somente o time comercial e os demais colaboradores autorizados podem acessar suas informações.',
   introduction:
-    'Esta página é pública e exclusivamente informativa. O sistema da Agenda e seus dados permanecem privados, protegidos por autenticação obrigatória e controle de acesso.',
+    'A Agenda Royal Norte Comercial é uma aplicação corporativa desenvolvida para organizar reuniões e eventos profissionais da Royal Norte Distribuidora. É utilizada pelo time comercial e por colaboradores autorizados para administrar compromissos, responsáveis, participantes e histórico operacional.',
   featuresTitle: 'Organização de reuniões profissionais',
   features: [
     'Cadastro, consulta, edição, reagendamento, transferência e cancelamento de reuniões.',
     'Definição de responsáveis e participantes.',
     'Integração ao Google Calendar para criação, consulta, atualização e cancelamento de eventos.',
     'Possibilidade de associar ou gerar reuniões no Google Meet, quando a integração disponibilizar esse recurso.',
-    'Envio de convites e lembretes aos participantes envolvidos.',
-    'Histórico operacional e controle interno.',
+    'Envio de convites, notificações e lembretes aos participantes envolvidos.',
+    'Registro de informações das reuniões, histórico operacional e controle interno.',
     'Autenticação obrigatória para acesso às informações da agenda.',
   ],
   googleTitle: 'Uso de serviços Google',
@@ -571,8 +577,8 @@ export const agendaContent = {
   legalTitle: 'Privacidade e condições de uso',
   legalText: 'Consulte como os dados são tratados e as responsabilidades no uso da ferramenta.',
   legalLinks: [
-    { label: 'Política de Privacidade da Agenda', to: '/agenda/privacidade' },
-    { label: 'Termos de Uso da Agenda', to: '/agenda/termos', style: 'ghost' },
+    { label: 'Política de Privacidade da Agenda', to: '/agenda/privacidade/' },
+    { label: 'Termos de Uso da Agenda', to: '/agenda/termos/', style: 'ghost' },
   ] satisfies ActionContent[],
 }
 
@@ -604,7 +610,13 @@ export const agendaPrivacyContent = {
     {
       title: 'Google Calendar e Google Meet',
       paragraphs: [
-        'Conforme as autorizações concedidas, a aplicação utiliza recursos do Google Calendar para criar, consultar, atualizar e cancelar compromissos, enviar convites e notificações e, quando disponível na integração, associar ou gerar reuniões virtuais no Google Meet. Esses recursos são utilizados exclusivamente para administrar compromissos profissionais autorizados.',
+        'Conforme as autorizações concedidas, a aplicação acessa o Google Calendar para consultar, criar, editar e cancelar eventos profissionais. Utiliza título, data, horários, responsáveis e participantes para manter os compromissos e seus convites atualizados. Recursos do Google Meet podem ser utilizados para associar reuniões virtuais e gerenciar suas configurações, quando necessários e disponíveis na integração. Esses recursos são utilizados exclusivamente para administrar compromissos profissionais autorizados.',
+      ],
+    },
+    {
+      title: 'Convites, notificações e lembretes',
+      paragraphs: [
+        'A Agenda utiliza o envio de e-mails para encaminhar convites, notificações de alterações e lembretes aos participantes envolvidos. Para essa finalidade, utiliza nomes, endereços de e-mail e as informações necessárias sobre o compromisso, como título, data, horário e local ou link da reunião. Requisições aos serviços de integração são realizadas para executar essas operações autorizadas; não se destinam a publicidade ou ao envio indiscriminado de mensagens.',
       ],
     },
     {
@@ -616,7 +628,7 @@ export const agendaPrivacyContent = {
     {
       title: 'Armazenamento',
       paragraphs: [
-        'Registros da Agenda podem ser armazenados em recursos corporativos controlados pela Royal Norte, incluindo planilhas e informações operacionais necessárias ao funcionamento da ferramenta. Eventos e informações associados às integrações também podem permanecer nos serviços Google utilizados.',
+        'A Agenda utiliza o Google Sheets para armazenar e consultar registros operacionais em planilhas corporativas controladas pela Royal Norte. Esses registros incluem informações das reuniões, responsáveis, participantes, status, identificadores de eventos sincronizados e histórico de alterações necessários à operação. Eventos e informações associados às integrações também podem permanecer no Google Calendar e nos demais serviços Google utilizados.',
       ],
     },
     {
@@ -634,7 +646,7 @@ export const agendaPrivacyContent = {
     {
       title: 'Retenção e exclusão',
       paragraphs: [
-        'Os dados são mantidos conforme as necessidades operacionais e as obrigações legais aplicáveis. Solicitações de exclusão devem ser encaminhadas ao contato institucional indicado nesta página. Registros podem ser preservados para cumprimento de obrigações legais, segurança e auditoria interna, quando aplicável.',
+        'Os registros são mantidos pelo tempo necessário à organização e ao acompanhamento dos compromissos, ao histórico operacional e ao cumprimento das obrigações legais aplicáveis. A retenção considera a finalidade do registro, a necessidade de continuidade operacional e eventuais exigências de segurança e auditoria interna; não há um prazo único para todos os dados. Solicitações de acesso, correção ou exclusão devem ser encaminhadas ao contato institucional indicado nesta página e serão avaliadas conforme a legislação. Registros podem ser preservados quando houver fundamento para sua manutenção.',
       ],
     },
     {
